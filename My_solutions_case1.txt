@@ -1,0 +1,648 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May 16 22:18:03 2019
+@author: 376020
+"""
+# Sequences and File Operations
+# 1
+# What is the output of the following code?
+#nums = set([1,1,2,3,3,3,4,4]) 
+#print(len(nums))
+Answer: The output would be 4
+
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May 16 22:26:57 2019
+@author: 376020
+"""
+#2 
+# What will be the output?
+# d = {"john":40, "peter":45} 
+# print(list(d.keys()))
+Answer: The output would be ["john","peter"]
+
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May 16 22:27:16 2019
+@author: 376020
+"""
+# 3
+# A website requires a user to input username and password to register. 
+# Write a program to check the validity of password given by user. 
+# Following are the criteria for checking password:
+#1. At least 1 letter between [a-z]
+
+#2. At least 1 number between [0-9]
+
+#1. At least 1 letter between [A-Z]
+
+#3. At least 1 character from [$#@]
+
+#4. Minimum length of transaction password: 6
+
+#5. Maximum length of transaction password: 12
+
+ 
+
+# Hint: In case of input data being supplied to the question, it should be assumed to be a console input.
+
+ 
+
+import re
+
+ 
+
+User_Name = input('Enter your Username: ')
+
+ 
+
+flag =0
+
+ 
+
+if (User_Name not in ('', ' ') and User_Name.isalnum()):
+
+    password = input('Enter your password: ')
+
+    if re.match('([(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$#@])]{6,12})',password):
+
+        print('Thanks for registering')           
+
+    else:
+
+        while True:
+
+            password = input('Thats not right!.Enter a Valid password: ')
+
+            if re.match('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$#@]){6,12})',password):
+
+                          print('Thats right.Thanks for registering')
+
+                          break
+
+else:
+
+    print('User name is not valid')
+
+#########################################################
+
+    
+
+import re
+
+ 
+
+User_Name = input('Enter your Username: ')
+
+ 
+
+flag =0
+
+ 
+
+if (User_Name not in ('', ' ') and User_Name.isalnum()):
+
+    password = input('Enter your password: ')
+
+    if re.match('^[a-zA-Z0-9#$@]{6,12}$',password):
+
+        print('Thanks for registering')           
+
+    else:
+
+        while True:
+
+            password = input('Thats not right!.Enter a Valid password: ')
+
+            if re.match('^[a-zA-Z0-9#$@]{6,12}$',password):
+
+                          print('Thats right.Thanks for registering')
+
+                          break
+
+else:
+
+
+    print('User name is not valid')
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 00:03:33 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 4
+
+# Write a for loop that prints all elements of a list and their position in the list.
+
+# a = [4,7,3,2,5,9]
+
+ 
+
+a = [4,7,3,2,5,9]
+
+for item in a:
+
+    print (item,a.index(item))
+
+ 
+
+
+#a.index(9)
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 00:26:35 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 5
+
+# Please write a program which accepts a string from console and print the characters that have even indexes.
+
+# Example: If the following string is given as input to the program:
+
+# H1e2l3l4o5w6o7r8l9d
+
+# Then, the output of the program should be:
+
+# Helloworld
+
+ 
+
+in_string = input('Enter a string: ')
+
+ 
+
+out_str =''
+
+ 
+
+n=1
+
+for c in in_string:
+
+#       print(c)
+
+#       print(in_string.index(c))
+
+        if in_string.index(c) % 2 == 0:
+
+            out_str = out_str+c
+
+ 
+
+print(out_str)
+
+
+ 
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 13:54:29 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 6
+
+# Please write a program which accepts a string from console and print it in reverse order.
+
+# Example: If the following string is given as input to the program:
+
+# rise to vote sir
+
+# Then, the output of the program should be:
+
+# ris etov ot esir
+
+ 
+
+in_string = input('Enter a string: ')
+
+ 
+
+print('The reversed string is: ', in_string[::-1])
+
+
+ 
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 13:59:48 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 7
+
+# Please write a program which count and print the numbers of each character in a string input by console.
+
+# Example: If the following string is given as input to the program:
+
+# abcdefgabc
+
+# Then, the output of the program should be:
+
+#a,2
+
+#c,2
+
+#b,2
+
+#e,1
+
+#d,1
+
+#g,1
+
+#f,1
+
+ 
+
+in_string = input('Enter a string: ')
+
+ 
+
+l = []
+
+for c in in_string:
+
+    l.append(c)
+
+ 
+
+ 
+
+print(l)
+
+ 
+
+s = sorted(list(set(l)))
+
+ 
+
+print(s)
+
+ 
+
+for o in s:
+
+    print(o+','+str(l.count(o)))
+
+
+    
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 14:05:41 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 8
+
+# With two given lists [1,3,6,78,35,55] and [12,24,35,24,88,120,155], 
+
+# write a program to make a list whose elements are intersection of the above given lists.
+
+ 
+
+a = [1,3,6,78,35,55]
+
+b = [12,24,35,24,88,120,155]
+
+ 
+
+print(list(set(a) & set(b)))
+
+
+ 
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 14:11:23 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 9 
+
+# With a given list [12,24,35,24,88,120,155,88,120,155], write a program to print this list after removing all 
+
+# duplicate values with original order reserved.
+
+ 
+
+list1 =  [12,24,35,24,88,120,155,88,120,155]
+
+ 
+
+without_dups = set(list1)
+
+ 
+
+#print(sorted(list1,reverse=True))
+
+ 
+
+new_list1 = []
+
+ 
+
+for item in without_dups:
+
+    if item in list1:
+
+        print(list1.index(item))
+
+        new_list1.insert(list1.index(item),item)
+
+#        new_list1.append(item)
+
+ 
+
+print(new_list1[::-1])
+
+ 
+
+
+ 
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 14:27:00 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 10
+
+# By using list comprehension, please write a program to print the list after removing the value 24 in [12,24,35,24,88,120,155].
+
+ 
+
+list1 = [12,24,35,24,88,120,155]
+
+ 
+
+for n in list1:
+
+    if n==24:
+
+        list1.remove(24)
+
+        
+
+print(list1)
+
+ 
+
+
+print ([n for n in list1 if n!=24])
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 14:38:13 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 11
+
+# By using list comprehension, please write a program to print the list after removing the 0th,4th,5th numbers in [12,24,35,70,88,120,155].
+
+ 
+
+list1 = [12,24,35,70,88,120,155]
+
+ 
+
+print([n for n in list1 if list1.index(n) not in [0,4,5]])
+
+
+ 
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 14:41:01 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 12
+
+# By using list comprehension, please write a program to print the list after removing delete 
+
+# numbers which are divisible by 5 and 7 in [12,24,35,70,88,120,155].
+
+ 
+
+list1 = [12,24,35,70,88,120,155]
+
+ 
+
+print([n for n in list1 if (n%5 != 0 or n%7 != 0)])
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 14:43:26 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 13
+
+# Please write a program to randomly generate a list with 5 numbers, which are divisible by 5 and 7 , between 1 and 1000 inclusive.
+
+ 
+
+mainlist =[]
+
+for n in range(1, 1001):
+
+        if (n%5==0 or n%7==0):
+
+            mainlist.append(n)
+
+            
+
+ 
+
+print(mainlist)
+
+ 
+
+multi_list = []
+
+for n in range(0,len(mainlist),5):
+
+    multi_list.append(mainlist[n:n+5])
+
+ 
+
+print(multi_list)
+
+      
+
+
+        
+
+ 
+
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Fri May 17 15:23:08 2019
+
+ 
+
+@author: 376020
+
+"""
+
+ 
+
+# 14
+
+ 
+
+# Write a program to compute 1/2+2/3+3/4+...+n/n+1 with a given n input by console (n>0).
+
+# Example:
+
+# If the following n is given as input to the program:
+
+# 5
+
+# Then, the output of the program should be:
+
+# 3.55
+
+ 
+
+number = int(input('Enter a number greater than 0: '))
+
+output = 0
+
+if number >0:
+
+    for n in range(1,number+1,1):
+
+        print(n)
+
+        output = output + (n/(n+1))
+
+        print(n+1)
+
+        print(output)
+
+ 
+
+print(round(output,2))
+
+ 
