@@ -1,6 +1,8 @@
 # PythonModule2
 Python Module2
 
+Case Study1
+
 1. What is the output of the following code? nums = set([1,1,2,3,3,3,4,4]) print(len(nums))
 Hint: Set consists unique element.
 
@@ -62,3 +64,29 @@ If the following n is given as input to the program:
 5
 Then, the output of the program should be:
 3.55
+
+Case Study2
+Domain – Telecom
+focus – Optimization
+Business challenge/requirement
+LifeTel Telecom is the latest entrant in the highly competitive Telecom market of Singapore. It issues SIM to the verified users. Till now verification was manual through the photocopy of approved id card document. However government has recently introduced Social ID called Reference ID which is mapped to fingerprint of user. LifeTel should now verify user against the fingerprint and Reference ID
+Key issues
+Build a system where when user enters Reference ID it is encrypted, so that hackers cannot view the mapping of Reference ID and finger print
+Considerations
+System should be secure
+Data volume
+- NA
+Additional information
+- NA
+Business benefits
+Company will be able to quickly issue SIM to user and expected gain in volume is approximately 10 times as the manual process of verification is replaced with secure automated system
+Approach to Solve
+You have to use fundamentals of Python taught in module 2
+1. Read the input from command line – Reference ID
+2. Check for validity – it should be 12 digits and allows on number and alphabet
+3. Encrypt the Reference ID and print it for reference
+
+Enhancements for code
+You can try these enhancements in code
+1. Allow some special characters in ReferenceID
+2. Give the option for decryption to user
